@@ -12,29 +12,46 @@ namespace ohisee.DependencyInjection
             _serviceDescriptors = serviceDescriptors;
         }
 
-        public T GetService<T>()
+        public object GetService(Type serviceType)
         {
-            var descriptor = _serviceDescriptors.SingleOrDefault(x => x.ServiceType == typeof(T));
+            
+            var descriptor = _serviceDescriptors.SingleOrDefault(x => x.ServiceType == serviceType);
 
             if (descriptor == null)
             {
-                throw new Exception($"Service of type {typeof(T).Name} isn't registered");
+                throw new Exception($"Service of type {serviceType.Name} isn't registered");
             }
 
             if (descriptor.Implementation != null)
             {
-                return (T) descriptor.Implementation;
+                return descriptor.Implementation;
             }
 
-            var implementation = (T) Activator.CreateInstance(descriptor.ServiceType);
+            var actualType = descriptor.ImplementationType ?? descriptor.ServiceType;
+
+            if (actualType.IsAbstract || actualType.IsInterface)
+            {
+                throw new Exception("Cannot instantiate abstract classes or interfaces");
+            }
+
+            var constructorInfo = actualType.GetConstructors().First();
+
+            var instantiatedParameters = constructorInfo.GetParameters()
+                .Select(x => GetService(x.ParameterType)).ToArray();
+
+            var implementation = Activator.CreateInstance(actualType, instantiatedParameters);
             
             if (descriptor.Lifetime == ServiceLifetime.Singleton)
             {
                 descriptor.Implementation = implementation;
-
             }
 
             return implementation;
+        }
+
+        public T GetService<T>()
+        {
+            return (T) GetService(typeof(T));
         }
     }
 }
