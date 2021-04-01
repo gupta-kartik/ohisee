@@ -1,0 +1,16 @@
+C:\dev\ohisee\ohisee\bin\Debug\net5.0\ohisee.exe
+C:\dev\ohisee\ohisee\bin\Debug\net5.0\ohisee.deps.json
+C:\dev\ohisee\ohisee\bin\Debug\net5.0\ohisee.runtimeconfig.json
+C:\dev\ohisee\ohisee\bin\Debug\net5.0\ohisee.runtimeconfig.dev.json
+C:\dev\ohisee\ohisee\bin\Debug\net5.0\ohisee.dll
+C:\dev\ohisee\ohisee\bin\Debug\net5.0\ref\ohisee.dll
+C:\dev\ohisee\ohisee\bin\Debug\net5.0\ohisee.pdb
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ohisee.csprojAssemblyReference.cache
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ohisee.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ohisee.AssemblyInfoInputs.cache
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ohisee.AssemblyInfo.cs
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ohisee.csproj.CoreCompileInputs.cache
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ohisee.dll
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ref\ohisee.dll
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ohisee.pdb
+C:\dev\ohisee\ohisee\obj\Debug\net5.0\ohisee.genruntimeconfig.cache
