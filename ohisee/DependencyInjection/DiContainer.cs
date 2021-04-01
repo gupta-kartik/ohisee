@@ -26,7 +26,15 @@ namespace ohisee.DependencyInjection
                 return (T) descriptor.Implementation;
             }
 
-            return default;
+            var implementation = (T) Activator.CreateInstance(descriptor.ServiceType);
+            
+            if (descriptor.Lifetime == ServiceLifetime.Singleton)
+            {
+                descriptor.Implementation = implementation;
+
+            }
+
+            return implementation;
         }
     }
 }

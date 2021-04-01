@@ -10,6 +10,11 @@ namespace ohisee.DependencyInjection
         {
             _serviceDescriptors.Add(new ServiceDescriptor(implementation, ServiceLifetime.Singleton));
         }
+        
+        public void RegisterSingleton<TService>()
+        {
+            _serviceDescriptors.Add(new ServiceDescriptor(typeof(TService), ServiceLifetime.Singleton));
+        }
 
         public DiContainer GenerateContainer()
         {

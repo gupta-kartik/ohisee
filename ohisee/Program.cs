@@ -9,7 +9,9 @@ namespace ohisee
         {
             var services = new DiServiceCollection();
             
-            services.RegisterSingleton(new RandomGuidGenerator());
+            // services.RegisterSingleton(new RandomGuidGenerator());
+            services.RegisterSingleton<RandomGuidGenerator>();
+
 
             var container = services.GenerateContainer();
             
